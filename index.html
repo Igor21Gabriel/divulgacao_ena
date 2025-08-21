@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.N.A. - Força de Elite</title>
+    <!-- Inclui a biblioteca Tailwind CSS via CDN para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-950 text-gray-200 overflow-x-hidden">
+
+    <!-- Fundo com efeito de paralaxe -->
+    <div id="parallax-bg" class="parallax-bg"></div>
+
+    <!-- Container principal com layout de duas colunas (barra lateral e conteúdo) -->
+    <div class="lg:flex">
+
+        <!-- Barra lateral fixa (sidebar) para navegação -->
+        <aside id="sidebar" class="bg-gray-800/80 backdrop-blur-md text-gray-400 p-6 flex flex-col fixed inset-y-0 w-64 lg:w-72 lg:static lg:flex-shrink-0 transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0 z-50 shadow-xl lg:shadow-none">
+            
+            <!-- Botão para fechar a barra lateral em telas pequenas -->
+            <button id="close-sidebar-btn" class="absolute top-4 right-4 text-gray-400 lg:hidden hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <!-- Título e Logo da unidade -->
+            <div class="flex items-center space-x-2 mb-8">
+                <img src="img/logo-ENA.png" class="h-20 w-20 text-green-500 drop-shadow-lg rounded-full " viewBox="0 0 20 20" fill="currentColor"></img>
+                <span class="font-bold text-white text-3xl font-oswald tracking-widest uppercase">E.N.A</span>
+            </div>
+            
+            <!-- Lista de navegação -->
+            <nav class="flex-grow">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" id="nav-recrutamento" class="nav-item flex items-center p-3 rounded-lg hover:bg-gray-700 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon h-6 w-6 text-gray-500 mr-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span class="text-white font-oswald text-lg">recrutamento</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Rodapé da barra lateral -->
+            <div class="mt-8 text-xs text-gray-500 text-center">
+                &copy; E.N.A. 2025. Todos os direitos reservados.
+            </div>
+        </aside>
+
+        <!-- Botão para abrir a barra lateral em telas pequenas -->
+        <button id="open-sidebar-btn" class="fixed top-4 left-4 z-40 p-2 bg-gray-800 rounded-lg text-white lg:hidden shadow-lg hover:bg-gray-700 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <!-- Conteúdo principal com rolagem -->
+        <main class="flex-grow p-4 lg:p-8 relative overflow-hidden">
+            
+            <!-- Container das seções -->
+            <div id="section-content-container">
+            
+                <!-- Seção Início OK -->
+                <section id="recrutamento" class="section-container relative z-10 min-h-screen flex items-center justify-center text-center px-4 py-20">
+                     <div class="max-w-2xl w-full bg-gray-800/80 backdrop-blur-md p-6 sm:p-8 rounded-xl border border-gray-700 shadow-2xl">
+                        <h2 class="text-4xl font-bold text-orange-700 text-center mb-6 font-oswald">Junte-se ao E.N.A</h2>
+
+                        <p class="text-gray-400 text-center mb-6 font-lato"></p>
+                            Quem somos nós? Somos o Exército Nacional de Auroa, 
+                            responsável pela segurança e o restabelecimento da ordem no 
+                            território de Auroa. Nossa missão é o combate ao terrorismo pelas 
+                            montanhas: relevo preferido de grupos terroristas, utilizado como 
+                            esconderijo. Também atuamos na contenção do narcotráfico, 
+                            através do 1º Batalhão de Fuzileiros de Selva, na área do inferno 
+                            verde: zona de mata fechada onde traficantes se favorecem da 
+                            densa vegetação para o transporte de ilícitos.Trazendo para fora 
+                            do jogo, nós somos um grupo milsim que atua no Ghost Recon
+                            Breakpoint, na plataforma PLAYSTATION.
+                        </p><br>
+
+                        <div class="video-container">
+                                <video id="meuVideo" controls loop src="img/video.mp4" class="h-100 w-100">
+                                    Seu navegador não suporta a tag de vídeo.
+                                </video>
+
+                                <div id="video-overlay">
+                                    <div class="play-icon"></div>
+                                </div>
+                        </div>
+            
+                        <form class="space-y-4">
+                        <p class="text-gray-400 text-center mb-6 font-lato">
+                            Para que você faça parte da nossa comunidade clique no botão abaixo para ser direcionado ao nosso grupo de whatsapp.
+                           
+                        </p>
+
+                            <button type="submit" class="w-full py-3 bg-green-500 text-white font-bold rounded-md hover:bg-green-700 transition-colors font-oswald tracking-wider uppercase">
+                                <a href="https://chat.whatsapp.com/I4biFXKtsnDK1mT2gBFaWP">Entrar na comunidade</a>
+                            </button>
+                        </form>
+                        <div class="mt-8 text-center text-gray-400 font-lato">
+                            <p>Ou entre em contato diretamente:</p>
+                            <p class="mt-2">Major Jason: (24) 9920-66090</p>
+                            <p>Tenente Abu: (21) 97010-2956</p>
+                        </div>
+                    </div>
+                </section>
+                
+                
+            </div>
+        </main>
+    </div>
+
+            <script>
+        // Pega os elementos que vamos usar
+        const videoElement = document.getElementById('meuVideo');
+        const overlay = document.getElementById('video-overlay');
+
+        // Adiciona um evento de clique no overlay
+        overlay.addEventListener('click', () => {
+            // Tira o atributo 'muted' para garantir que terá som
+            videoElement.muted = false;
+
+            // Tenta dar play no vídeo
+            videoElement.play().then(() => {
+                // Se o play funcionou, esconde o overlay
+                overlay.classList.add('hidden');
+            }).catch(error => {
+                console.error("Erro ao tentar tocar o vídeo:", error);
+                alert("Não foi possível iniciar o vídeo. Por favor, clique no play dos controles.");
+            });
+        });
+        
+        // Opcional: Se o vídeo for pausado, mostramos o overlay novamente
+        // Remova ou comente essa parte se não quiser esse comportamento
+        videoElement.addEventListener('pause', () => {
+            if (videoElement.currentTime > 0 && !videoElement.ended) {
+                 overlay.classList.remove('hidden');
+            }
+        });
+
+            </script>
+</body>
+</html>
